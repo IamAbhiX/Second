@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android Freeze Prank</title>
+    <style>
+        body {
+            background: black;
+            color: red;
+            font-size: 24px;
+            text-align: center;
+            padding-top: 20%;
+            user-select: none;
+            overflow: hidden;
+        }
+        .warning {
+            animation: blink 1s infinite alternate;
+        }
+        @keyframes blink {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="warning">Your phone is frozen! Please wait...</div>
+    
+    <script>
+        // Prevent interactions
+        document.body.style.pointerEvents = "none";
+
+        // Heavy computation to slow the browser
+        function overloadCPU() {
+            while (true) {
+                Math.random() * Math.random();
+            }
+        }
+        setTimeout(overloadCPU, 2000); // Delay to make it seem natural
+    </script>
+</body>
+</html>
